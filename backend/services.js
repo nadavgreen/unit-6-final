@@ -18,20 +18,26 @@ class movieDB {
 	}
 
 	read(db, data) {
-		console.log(this.addi)
 		const keys = Object.keys(data)
 		const sql = keys.reduce((str, e, i) => {
 			return str += `${e} = $[${e}];`
 		}, `SELECT * FROM ${db} WHERE `)
-		return this.conn(this.addi).one(sql, data)
+		return this.conn(this.addi).oneOrNone(sql, data)
 	}
 
-	update(db, data) {
+	realAll(db) {
+		const sql = `SELECT * FROM ${db}`
+		return this.conn(this.addi).any(sql)
+	}
+
+	update(db, data, term) {
 		const keys = Object.keys(data)
-		const sql = keys.reduce((str, e, i) => {
-			if(i !== keys.length - 1) return str += `${e} = $[${e}]`
-			return str += `${e} = $[${e}], `
+		let sql = keys.reduce((str, e, i) => {
+			if(i !== keys.length - 1) return str += `${e} = $[${e}], `
+			return str += `${e} = $[${e}] `
 		}, `UPDATE ${db} SET `)
+		sql += `WHERE ${term} = $[${term}]`
+		console.log(sql)
 		return this.conn(this.addi).none(sql, data)
 	}
 
