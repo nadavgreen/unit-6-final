@@ -22,10 +22,10 @@ class tvDB {
 		const sql = keys.reduce((str, e, i) => {
 			return str += `${e} = $[${e}];`
 		}, `SELECT * FROM ${table} WHERE `)
-		return this.conn(this.addi).oneOrNone(sql, data)
+		return this.conn(this.addi).any(sql, data)
 	}
 
-	realAll(table) {
+	readAll(table) {
 		const sql = `SELECT * FROM ${table}`
 		return this.conn(this.addi).any(sql)
 	}

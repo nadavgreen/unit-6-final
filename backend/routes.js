@@ -1,10 +1,10 @@
-const {movieDB} = require('./services.js')
-const db  = new movieDB()
+const {tvDB} = require('./services.js')
+const db  = new tvDB()
 
 const usersRoutes = {}
 
 usersRoutes.create = (req, res) => {
-	movieDB.create('users', req.body)
+	db.create('users', req.body)
 	.then(res.json({'msg':'passed'}))
 	.catch(err => {
 		console.log(err)
@@ -13,7 +13,7 @@ usersRoutes.create = (req, res) => {
 }
 
 usersRoutes.read = (req, res) => {
-	movieDB.read('users', req.params)
+	db.read('users', req.params)
 	.then(data => res.json({'msg':data}))
 	.catch(err => {
 		console.log(err)
@@ -22,7 +22,7 @@ usersRoutes.read = (req, res) => {
 }
 
 usersRoutes.readAll = (req, res) => {
-	movieDB.readAll('users')
+	db.readAll('users')
 	.then(data => res.json({'msg':data}))
 	.catch(err => {
 		console.log(err)
@@ -31,7 +31,7 @@ usersRoutes.readAll = (req, res) => {
 }
 
 usersRoutes.update = (req, res) => {
-	movieDB.update('users', req.body)
+	db.update('users', req.body)
 	.then(res.json({'msg':'passed'}))
 	.catch(err => {
 		console.log(err)
@@ -40,11 +40,11 @@ usersRoutes.update = (req, res) => {
 }
 
 usersRoutes.delete = (req, res) => {
-	movieDB.delete('users', req.body)
+	db.delete('users', req.body)
 	.then(res.json({'msg':'passed'}))
 	.catch(err => {
 		console.log(err)
-		res.json('msg':'failed')
+		res.json({'msg':'failed'})
 	})
 }
 
@@ -52,7 +52,7 @@ const genresRoutes = {}
 
 
 genresRoutes.create = (req, res) => {
-	movieDB.create('genres', req.body)
+	db.create('genres', req.body)
 	.then(res.json({'msg':'passed'}))
 	.catch(err => {
 		console.log(err)
@@ -61,7 +61,7 @@ genresRoutes.create = (req, res) => {
 }
 
 genresRoutes.read = (req, res) => {
-	movieDB.read('genres', req.params)
+	db.read('genres', req.params)
 	.then(data => res.json({'msg':data}))
 	.catch(err => {
 		console.log(err)
@@ -70,7 +70,7 @@ genresRoutes.read = (req, res) => {
 }
 
 genresRoutes.readAll = (req, res) => {
-	movieDB.readAll('genres')
+	db.readAll('genres')
 	.then(data => res.json({'msg':data}))
 	.catch(err => {
 		console.log(err)
@@ -79,7 +79,7 @@ genresRoutes.readAll = (req, res) => {
 }
 
 genresRoutes.update = (req, res) => {
-	movieDB.update('genres', req.body)
+	db.update('genres', req.body)
 	.then(res.json({'msg':'passed'}))
 	.catch(err => {
 		console.log(err)
@@ -88,18 +88,18 @@ genresRoutes.update = (req, res) => {
 }
 
 genresRoutes.delete = (req, res) => {
-	movieDB.delete('genres', req.body)
+	db.delete('genres', req.body)
 	.then(res.json({'msg':'passed'}))
 	.catch(err => {
 		console.log(err)
-		res.json('msg':'failed')
+		res.json({'msg':'failed'})
 	})
 }
 
 const showsRoutes = {}
 
 showsRoutes.create = (req, res) => {
-	movieDB.create('shows', req.body)
+	db.create('shows', req.body)
 	.then(res.json({'msg':'passed'}))
 	.catch(err => {
 		console.log(err)
@@ -108,7 +108,7 @@ showsRoutes.create = (req, res) => {
 }
 
 showsRoutes.read = (req, res) => {
-	movieDB.read('shows', req.params)
+	db.read('shows', req.params)
 	.then(data => res.json({'msg':data}))
 	.catch(err => {
 		console.log(err)
@@ -117,7 +117,7 @@ showsRoutes.read = (req, res) => {
 }
 
 showsRoutes.readAll = (req, res) => {
-	movieDB.readAll('shows')
+	db.readAll('shows')
 	.then(data => res.json({'msg':data}))
 	.catch(err => {
 		console.log(err)
@@ -126,7 +126,7 @@ showsRoutes.readAll = (req, res) => {
 }
 
 showsRoutes.update = (req, res) => {
-	movieDB.update('shows', req.body)
+	db.update('shows', req.body)
 	.then(res.json({'msg':'passed'}))
 	.catch(err => {
 		console.log(err)
@@ -135,19 +135,19 @@ showsRoutes.update = (req, res) => {
 }
 
 showsRoutes.delete = (req, res) => {
-	movieDB.delete('shows', req.body)
+	db.delete('shows', req.body)
 	.then(res.json({'msg':'passed'}))
 	.catch(err => {
 		console.log(err)
-		res.json('msg':'failed')
+		res.json({'msg':'failed'})
 	})
 }
 
 const commentsRoutes = {}
 
 
-commentssRoutes.create = (req, res) => {
-	movieDB.create('comments', req.body)
+commentsRoutes.create = (req, res) => {
+	db.create('comments', req.body)
 	.then(res.json({'msg':'passed'}))
 	.catch(err => {
 		console.log(err)
@@ -156,7 +156,7 @@ commentssRoutes.create = (req, res) => {
 }
 
 commentsRoutes.read = (req, res) => {
-	movieDB.read('comments', req.params)
+	db.read('comments', req.params)
 	.then(data => res.json({'msg':data}))
 	.catch(err => {
 		console.log(err)
@@ -165,7 +165,7 @@ commentsRoutes.read = (req, res) => {
 }
 
 commentsRoutes.readAll = (req, res) => {
-	movieDB.readAll('comments')
+	db.readAll('comments')
 	.then(data => res.json({'msg':data}))
 	.catch(err => {
 		console.log(err)
@@ -174,7 +174,7 @@ commentsRoutes.readAll = (req, res) => {
 }
 
 commentsRoutes.update = (req, res) => {
-	movieDB.update('comments', req.body)
+	db.update('comments', req.body)
 	.then(res.json({'msg':'passed'}))
 	.catch(err => {
 		console.log(err)
@@ -183,12 +183,12 @@ commentsRoutes.update = (req, res) => {
 }
 
 commentsRoutes.delete = (req, res) => {
-	movieDB.delete('comments', req.body)
+	db.delete('comments', req.body)
 	.then(res.json({'msg':'passed'}))
 	.catch(err => {
 		console.log(err)
-		res.json('msg':'failed')
+		res.json({'msg':'failed'})
 	})
 }
 
-module.exports = {userRoutes, genresRoutes, showsRoutes, commentsRoutes}
+module.exports = {usersRoutes, genresRoutes, showsRoutes, commentsRoutes}

@@ -1,15 +1,15 @@
-const {userRoutes, genresRoutes, showsRoutes, commentsRoutes} = require('./routes.js')
+const {usersRoutes, genresRoutes, showsRoutes, commentsRoutes} = require('./routes.js')
 const express = require('express')
 
 const routers = {}
 
 routers.users = () => {
 	const router = express.Router()
-	router.post('/create', userRoutes.create)
-	router.get('/read/:id', userRoutes.read)
-	router.get('/read', userRoutes.readAll)
-	router.put('/update', userRoutes.update)
-	router.delete('/delete', userRoutes.delete)
+	router.post('/create', usersRoutes.create)
+	router.get('/read/:id', usersRoutes.read)
+	router.get('/read', usersRoutes.readAll)
+	router.put('/update', usersRoutes.update)
+	router.delete('/delete', usersRoutes.delete)
 	return router
 }
 
@@ -26,7 +26,9 @@ routers.genres = () => {
 routers.shows = () => {
 	const router = express.Router()
 	router.post('/create', showsRoutes.create)
-	router.get('/read/:id', showsRoutes.read)
+	router.get('/readgenres/:genre_id', showsRoutes.read)
+	router.get('/read/:user_id', showsRoutes.read)
+	router.get('/readone/:id', showsRoutes.read)
 	router.get('/read', showsRoutes.readAll)
 	router.put('/update', showsRoutes.update)
 	router.delete('/delete', showsRoutes.delete)
