@@ -23,18 +23,19 @@ export default class User extends Component {
 		.then(data=>this.setState({user: data.data.msg}))
 		.then(_=>server.get('shows/read', id))
 		.then(data=>this.setState({shows: data.data.msg}))
-		.then(console.log)
 		.catch(console.log)
 	}	
 
 	render() {
-		console.log(this.state.shows)
 		return <>
 			<div style={{display: 'flex', flexWrap: 'wrap'}}>
 			{
 			this.state.shows.map((e, i)=>{
 				return (
 					<div style={{width: '50%'}} key={i}>
+						<Link to={`/show/${e.id}`}>
+							<img src={e.img_url} alt='' />
+						</Link>
 						<div>
 							{e.title}
 						</div>
@@ -46,9 +47,6 @@ export default class User extends Component {
 							<></>
 							}
 						</div>
-						<Link to={`/show/${e.id}`}>
-							<img src={e.img_url} alt='' />
-						</Link>
 					</div>
 				)
 			})

@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import Genres from './Genres.js'
 
 export default () => {
 	return <>
@@ -11,6 +10,6 @@ export default () => {
 		 {' - '} 
 		<Link to='/shows'>TV Shows</Link>
 		 {' - '} 
-		<Genres />
+		<Link to='/user/post'>Post</Link>
 	</>
 }
