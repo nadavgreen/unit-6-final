@@ -33,7 +33,7 @@ export default class Post extends Component {
 
 	submit = (e) => {
 		e.preventDefault()
-		if(this.context && this.state.actgenre){
+		if(this.context && this.state.actgenre && this.state.title.length > 1 && this.state.img_url.length > 1){
 			const user_id = this.context.id
 			const genre_id = this.state.actgenre.id
 			const {title, img_url} = this.state

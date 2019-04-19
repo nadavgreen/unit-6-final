@@ -6,7 +6,8 @@ import APICalls from '../services/apicalls.js'
 export default class User extends Component {
 	
 	state = {
-		users: []
+		users: [],
+		act: ''
 	}
 
 	static contextType = UserContext	
@@ -19,6 +20,7 @@ export default class User extends Component {
 		const {value} = e.target.attributes[0]
 		const {users} = this.state
 		this.context(users[value])
+		this.setState({act: {backgroundColor: 'red'}})
 	}
 
 	componentDidMount(){
@@ -34,7 +36,9 @@ export default class User extends Component {
 			this.state.users.map((e, i)=>{
 				return (
 					<div value={i} key={i}>
-					<Link to={`/user/${e.id}`} onClick={this.loadUser} value={i}>{e.username}</Link>
+					<Link to={`/user/${e.id}`}>{e.username}</Link>
+					{' '}
+					<button onClick={this.loadUser} value={i}/>
 					</div>
 				)
 			})
