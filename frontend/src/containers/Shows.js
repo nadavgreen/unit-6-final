@@ -16,14 +16,37 @@ export default class Shows extends Component {
 	componentDidMount(){
 		const {server} = this.server
 		server.getAll('shows/read')
-		.then(data=>{this.setState({shows: data.data.msg})})
+		.then(data =>{
+			const {msg} =  data.data
+			const temp  = []
+			let hold = {}
+			msg.forEach((e,i) => {
+				if(i === 0) {hold.title = e.title; hold.users = []; hold.users.push(e.user_id);}
+				else if(i === msg.length - 1) {hold.users.push(e.user_id); temp.push(hold)}
+				else if(hold.title === e.title) hold.users.push(e.user_id)
+				else 
+					{
+					temp.push(hold); 
+					hold={}; 
+					hold.title = e.title; 
+					hold.users = []; 
+					hold.users.push(e.user_id);}
+			})
+			if(msg[msg.length - 1].title !== msg[msg.length - 2].title) 
+				{hold={}; 
+				hold.title =  msg[msg.length-1].title; 
+				hold.users = []; 
+				hold.users.push(msg[msg.length-1].user_id); 
+				temp.push(hold)
+			}
+			this.setState({shows: temp})
+		})
 		.then(_=>server.getAll('users/read'))
 		.then(data=>this.setState({users: data.data.msg}))
 		.catch(console.log)
 	}
 	
 	render(){
-		console.log(this.state.shows)
 		return <>
 			<div style={{display: 'flex', flexWrap:'wrap'}}>
 				{
@@ -35,10 +58,20 @@ export default class Shows extends Component {
 							</div>
 							<div>
 								{
-								this.state.users[e.user_id - 1] ?
-								<Link to={`/user/${e.user_id}`}>
-									{this.state.users[e.user_id - 1].username}
-								</Link>
+								e.users.length > 0 ?
+								e.users.map((e, i)=>{
+									return(
+										<div key={i}>
+										<Link to={`/user/${i+1}`}>
+											{this.state.users.length > 0 ?
+											this.state.users[e-1].username
+											:
+											<></>
+											}
+										</Link>
+										</div>
+									)
+								})
 								:
 								<></>
 								}
