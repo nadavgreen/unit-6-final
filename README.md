@@ -2,7 +2,7 @@
 
 ## ** Disclaimer: This project has NOOOOOO styling. This was a showcase of my knowledge in building a RESTFul API and building a fullstack application. The only styling is what was required for the exam.
 
-Here are the to the [basic requirements](ttps://github.com/joinpursuit/PCNW-Web-Final)
+Here are the to the [basic requirements](https://github.com/joinpursuit/PCNW-Web-Final)
 
 ###### Please note there are no instructions on how to create the Genres link shown in the mockups nor are their instructions on how to display the Post page.
 
