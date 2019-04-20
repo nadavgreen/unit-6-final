@@ -58,11 +58,6 @@ The /shows page list all of the tv shows in the database and the users that are 
 
 ![alt text](https://github.com/nadavgreen/unit-6-final/blob/master/assests/tvShows.png "tvShows")
 
-In this example after a **post**, [Pam Beesley](https://www.youtube.com/watch?v=gO8N3L_aERg) has created the [Lion King](https://www.youtube.com/watch?v=4CbLXeGSDxg) show as can be seen **below**.
+In this example, after a **post**, [Pam Beesley](https://www.youtube.com/watch?v=gO8N3L_aERg) has created the [Lion King](https://www.youtube.com/watch?v=4CbLXeGSDxg) show as can be seen **below**.
 
 ![alt text](https://github.com/nadavgreen/unit-6-final/blob/master/assests/editedTvShows.png "editedTvShows")
-
-
-
-
-
