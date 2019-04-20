@@ -6,7 +6,7 @@ Here are the to the [basic requirements](ttps://github.com/joinpursuit/PCNW-Web-
 
 ###### Please note there are no instructions on how to create the Genres link shown in the mockups nor are their instructions on how to display the Post page.
 
-### Project
+### /frontend: React
 
 The project has a few **pages** which are as follows:
 
@@ -61,3 +61,5 @@ The /shows page list all of the tv shows in the database and the users that are 
 In this example, after a **post**, [Pam Beesley](https://www.youtube.com/watch?v=gO8N3L_aERg) has created the [Lion King](https://www.youtube.com/watch?v=4CbLXeGSDxg) show as can be seen **below**.
 
 ![alt text](https://github.com/nadavgreen/unit-6-final/blob/master/assests/editedTvShows.png "editedTvShows")
+
+### /backend: Express
