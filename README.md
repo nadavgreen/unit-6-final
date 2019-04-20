@@ -90,7 +90,11 @@ Post: ```/create```
 
 The create endpoint on the users path allows you to post a new user. The only required data is a username
 
-```data = { username: "YOUR DATA" }```
+```
+data = { 
+  username: "YOUR DATA" 
+}
+```
 
 ```curl -X POST http://localhost:3001/users/create -H "Content-Type: application/json" -d '{"username":"YOUR DATA"}'```
 
@@ -120,7 +124,11 @@ PUT: ```/update```
 
 The update endpoint on the users path allows you to put new information of an existing user. The only required data is a username
 
-```data = { username: "YOUR DATA" }```
+```
+data = { 
+  username: "YOUR DATA" 
+}
+```
 
 ```curl -X PUT http://localhost:3001/users/update -H "Content-Type: application/json" -d '{"username":"YOUR DATA"}'```
 
@@ -130,7 +138,11 @@ DELETE: ```/delete```
 
 The delete endpoint on the users path allows you to delete the information of a specific user based on id
 
-```data = { id : YOUR DATA }```
+```
+data = { 
+  id : YOUR DATA 
+}
+```
 
 ```curl -X DELETE http://localhost:3001/users/delete``` -H "Content-Type: application/json" -d '{"id":"YOU DATA"}'
 
