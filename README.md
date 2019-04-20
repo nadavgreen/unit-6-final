@@ -4,7 +4,7 @@
 
 Here are the to the [basic requirements](ttps://github.com/joinpursuit/PCNW-Web-Final)
 
-###### Please note there are no instructions on how to display the Genres link in the mockups nor are their instructions on how to display the Post page.
+###### Please note there are no instructions on how to create the Genres link shown in the mockups nor are their instructions on how to display the Post page.
 
 ### Project
 
