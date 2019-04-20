@@ -14,6 +14,8 @@ The project has a few **pages** which are as follows:
 
 Route: ```/```
 
+---
+
 The home page only serves to display a welcome message.
 
 ![alt text](https://github.com/nadavgreen/unit-6-final/blob/master/assests/home.png "home")
@@ -21,6 +23,8 @@ The home page only serves to display a welcome message.
 #### Users 
 
 Route: ```/users```
+
+---
 
 The users page lists all of the users in the db. If the button **next** to the users name is pressed, the correcponding user is now the **active user**. Pressing a user directly will take you to their page regardless of if they are the active user.
 
@@ -30,6 +34,8 @@ The users page lists all of the users in the db. If the button **next** to the u
 
 Route: ```/user/:id```
 
+---
+
 The user/:id page list all of the shows watched by the selected user *(not only the active user)*. You can select the image of the show to go to the shows page.
 
 ![alt text](https://github.com/nadavgreen/unit-6-final/blob/master/assests/userShows.png "userShows")
@@ -37,6 +43,8 @@ The user/:id page list all of the shows watched by the selected user *(not only 
 #### Post
 
 Route: ```/user/post```
+
+---
 
 The user/post page allows an **active user** to upload a show they have watched. This form takes a **title**, a **image url** and a selected **genre** from a pre-created list
 
@@ -46,6 +54,8 @@ The user/post page allows an **active user** to upload a show they have watched.
 
 Route: ```/show/:id```
 
+---
+
 The show/:id page list the currently selected show. Showcasing the image, tile and genre.
 
 ![alt text](https://github.com/nadavgreen/unit-6-final/blob/master/assests/show.png "Show")
@@ -53,6 +63,8 @@ The show/:id page list the currently selected show. Showcasing the image, tile a
 #### 
 
 Route: ```/shows```
+
+---
 
 The /shows page list all of the tv shows in the database and the users that are watching them directly **below**
 
@@ -74,6 +86,8 @@ In this example, after a **post**, [Pam Beesley](https://www.youtube.com/watch?v
 
 Post: ```/create```
 
+---
+
 The create endpoint on the users path allows you to post a new user. The only required data is a username
 
 ```data = { username: "YOUR DATA" }```
@@ -81,6 +95,8 @@ The create endpoint on the users path allows you to post a new user. The only re
 ```curl -X POST http://localhost:3001/users/create -H "Content-Type: application/json" -d '{"username":"YOUR DATA"}'```
 
 GET: ```/read/:id```
+
+---
 
 The read/:id endpoint on the users path allows you to get a specific user based on id
 
@@ -90,6 +106,8 @@ The read/:id endpoint on the users path allows you to get a specific user based 
 
 GET: ```/read```
 
+---
+
 The read endpoint on the users path allows you to get all users in the db. No data is required
 
 ```data : null```
@@ -98,6 +116,8 @@ The read endpoint on the users path allows you to get all users in the db. No da
 
 PUT: ```/update```
 
+---
+
 The update endpoint on the users path allows you to put new information of an existing user. The only required data is a username
 
 ```data = { username: "YOUR DATA" }```
@@ -105,6 +125,8 @@ The update endpoint on the users path allows you to put new information of an ex
 ```curl -X PUT http://localhost:3001/users/update -H "Content-Type: application/json" -d '{"username":"YOUR DATA"}'```
 
 DELETE: ```/delete```
+
+---
 
 The delete endpoint on the users path allows you to delete the information of a specific user based on id
 
