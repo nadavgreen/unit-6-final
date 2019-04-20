@@ -38,7 +38,7 @@ The user/:id page list all of the shows watched by the selected user *(not only 
 
 Route: ```/user/post```
 
-The user/post page allows an **active user** to upload a show they have watched. This form take **title**, **image url** and a selected **genre** from a pre-created list
+The user/post page allows an **active user** to upload a show they have watched. This form takes a **title**, a **image url** and a selected **genre** from a pre-created list
 
 ![alt text](https://github.com/nadavgreen/unit-6-final/blob/master/assests/post.png "post")
 
