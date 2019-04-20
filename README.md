@@ -70,7 +70,7 @@ In this example, after a **post**, [Pam Beesley](https://www.youtube.com/watch?v
 
 **Endpoints:**
 
-Route: ```/users```
+**Route: ```/users```**
 
 Post: ```/create```
 
@@ -112,11 +112,11 @@ The delete endpoint on the users path allows you to delete the information of a 
 
 ```curl -X DELETE http://localhost:3001/users/delete``` -H "Content-Type: application/json" -d '{"id":"YOU DATA"}'
 
-Route: ```/genres```
+**Route: ```/genres```**
 
-Route: ```/shows```
+**Route: ```/shows```**
 
 
 The update endpoint on the users path allows you to put new information of an existing user. Because this is a **put** you will have to enter **all** information even if you aren't making changes to that column
 
-Route: ```/comments```
+**Route: ```/comments```**
