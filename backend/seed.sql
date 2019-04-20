@@ -17,15 +17,19 @@ CREATE TABLE shows (
     id SERIAL PRIMARY KEY,
     title VARCHAR NOT NULL,
     img_url VARCHAR NOT NULL,
-    user_id INT REFERENCES users(id),
+    user_id INT REFERENCES users(id)
+    ON DELETE CASCADE,
     genre_id INT REFERENCES genres(id)
+    ON DELETE CASCADE
 );
 
 CREATE TABLE comments (
     id SERIAL PRIMARY KEY,
     comment_body VARCHAR NOT NULL,
-    user_id INT REFERENCES users(id),
+    user_id INT REFERENCES users(id)
+    ON DELETE CASCADE,
     show_id INT REFERENCES shows(id)
+    ON DELETE CASCADE
 );
 
 -- INSERT GENRES

@@ -63,3 +63,66 @@ In this example, after a **post**, [Pam Beesley](https://www.youtube.com/watch?v
 ![alt text](https://github.com/nadavgreen/unit-6-final/blob/master/assests/editedTvShows.png "editedTvShows")
 
 ### /backend: Express
+
+##### The practice server was not implemented with CI/CD, unit testing, nor validation
+
+###### Endpoints return '{"msg":"passed"}', '{"msg":"failed"}' or '{"msg":data}' where applicable
+
+Endpoints:
+
+Route: ```/users```
+
+Post: ```/create```
+
+The create endpoint on the users path allows you to post a new user. The only required data is a username
+
+```Data = {
+	username : "YOUR DATA"
+}```
+
+```curl -X POST http://localhost:3001/users/create -H "Content-Type: application/json" -d '{"username":"YOUR DATA"}'```
+
+GET: ```/read/:id```
+
+The read/:id endpoint on the users path allows you to get a specific user based on id
+
+```id = YOUR DATA```
+
+```curl http://localhost:3001/users/read/:YOUR DATA```
+
+GET: ```/read```
+
+The read endpoint on the users path allows you to get all users in the db. No data is required
+
+```data : null```
+
+```curl http://localhost:3001/users/read```
+
+PUT: ```/update```
+
+The update endpoint on the users path allows you to put new information of an existing user. The only required data is a username
+
+```data = {
+	username: "YOUR DATA"
+}```
+
+```curl -X PUT http://localhost:3001/users/update -H "Content-Type: application/json" -d '{"username":"YOUR DATA"}'```
+
+DELETE: ```/delete```
+
+The delete endpoint on the users path allows you to delete the information of a specific user based on id
+
+```data = {
+	id : YOUR DATA
+}```
+
+```curl -X DELETE http://localhost:3001/users/delete``` -H "Content-Type: application/json" -d '{"id":"YOU DATA"}'
+
+Route: ```/genres```
+
+Route: ```/shows```
+
+
+The update endpoint on the users path allows you to put new information of an existing user. Because this is a **put** you will have to enter **all** information even if you aren't making changes to that column
+
+Route: ```/comments```
