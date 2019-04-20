@@ -1,9 +1,5 @@
 # [French Montana - No Stylist (feat. Drake)](https://www.youtube.com/watch?v=9_k_goMr5ZI)
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=9_k_goMr5ZI
-" target="_blank"><img src="http://img.youtube.com/vi/9_k_goMr5ZI/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="100%" height="100%" border="10" /></a>
-
 ## ** Disclaimer: This project has NOOOOOO styling. This was a showcase of my knowledge in building a RESTFul API and building a fullstack application. The only styling is what was required for the exam.
 
 Here are the to the [basic requirements](ttps://github.com/joinpursuit/PCNW-Web-Final)
