@@ -16,16 +16,18 @@ export default class User extends Component {
 	}
 	
 	componentDidMount(){
-		const {id} = this.props.match.params
-		if(typeof id === 'string') this.setState({redirect: <Redirect to='/' />})
-		const {server} = this.server
-		server.getAll('genres/read')
-		.then(data=>this.setState({genres: data.data.msg}))
-		.then(_=>server.get('users/read', id))
-		.then(data=>this.setState({user: data.data.msg}))
-		.then(_=>server.get('shows/read', id))
-		.then(data=>this.setState({shows: data.data.msg}))
-		.catch(console.log)
+			const {id} = this.props.match.params
+			if(parseInt(id) > 0) {
+			const {server} = this.server
+			server.getAll('genres/read')
+			.then(data=>this.setState({genres: data.data.msg}))
+			.then(_=>server.get('users/read', id))
+			.then(data=>this.setState({user: data.data.msg}))
+			.then(_=>server.get('shows/read', id))
+			.then(data=>this.setState({shows: data.data.msg}))
+			.catch(console.log)
+		}
+		else this.setState({redirect: <Redirect to='/' />})
 	}	
 
 	render() {
