@@ -68,7 +68,7 @@ In this example, after a **post**, [Pam Beesley](https://www.youtube.com/watch?v
 
 ###### Endpoints return '{"msg":"passed"}', '{"msg":"failed"}' or '{"msg":data}' where applicable
 
-Endpoints:
+**Endpoints:**
 
 Route: ```/users```
 
@@ -76,9 +76,9 @@ Post: ```/create```
 
 The create endpoint on the users path allows you to post a new user. The only required data is a username
 
-```Data = {
-	username : "YOUR DATA"
-}```
+data = {
+	username: "YOUR DATA"
+}
 
 ```curl -X POST http://localhost:3001/users/create -H "Content-Type: application/json" -d '{"username":"YOUR DATA"}'```
 
