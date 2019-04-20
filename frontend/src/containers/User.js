@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import APICalls from '../services/apicalls.js'
 
 export default class User extends Component {
@@ -7,7 +7,8 @@ export default class User extends Component {
 	state = {
 		user: {},
 		shows: [],
-		genres: []
+		genres: [],
+		redirect: <></>
 	}
 
 	server = {
@@ -16,6 +17,7 @@ export default class User extends Component {
 	
 	componentDidMount(){
 		const {id} = this.props.match.params
+		if(typeof id === 'string') this.setState({redirect: <Redirect to='/' />})
 		const {server} = this.server
 		server.getAll('genres/read')
 		.then(data=>this.setState({genres: data.data.msg}))
@@ -28,6 +30,7 @@ export default class User extends Component {
 
 	render() {
 		return <>
+			{this.state.redirect}
 			<div style={{display: 'flex', flexWrap: 'wrap'}}>
 			{
 			this.state.shows.map((e, i)=>{
