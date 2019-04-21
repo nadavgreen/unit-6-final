@@ -145,7 +145,7 @@ data = {
 }
 ```
 
-```curl -X DELETE http://localhost:3001/users/delete``` -H "Content-Type: application/json" -d '{"id":"YOU DATA"}'
+```curl -X DELETE http://localhost:3001/users/delete``` -H "Content-Type: application/json" -d '{"id":"YOUR DATA"}'
 
 **Route: ```/genres```**
 
@@ -208,7 +208,7 @@ data = {
 }
 ```
 
-```curl -X DELETE http://localhost:3001/genres/delete``` -H "Content-Type: application/json" -d '{"id":"YOU DATA"}'
+```curl -X DELETE http://localhost:3001/genres/delete``` -H "Content-Type: application/json" -d '{"id":"YOUR DATA"}'
 
 **Route: ```/shows```**
 
@@ -297,7 +297,7 @@ data = {
 }
 ```
 
-```curl -X DELETE http://localhost:3001/shows/delete``` -H "Content-Type: application/json" -d '{"id":"YOU DATA"}'
+```curl -X DELETE http://localhost:3001/shows/delete``` -H "Content-Type: application/json" -d '{"id":"YOUR DATA"}'
 
 **Route: ```/comments```**
 
@@ -364,4 +364,4 @@ data = {
 }
 ```
 
-```curl -X DELETE http://localhost:3001/comments/delete``` -H "Content-Type: application/json" -d '{"id":"YOU DATA"}'
+```curl -X DELETE http://localhost:3001/comments/delete``` -H "Content-Type: application/json" -d '{"id":"YOUR DATA"}'
