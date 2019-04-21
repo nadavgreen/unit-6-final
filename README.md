@@ -30,6 +30,10 @@ The users page lists all of the users in the db. If the button **next** to the u
 
 ![alt text](https://github.com/nadavgreen/unit-6-final/blob/master/assests/users.png "users")
 
+As can be seen in the photo below, there is now an active user
+
+![alt text](https://github.com/nadavgreen/unit-6-final/blob/master/assests/usersAfter.png "usersAfter")
+
 #### User
 
 Route: ```/user/:id```
@@ -56,9 +60,13 @@ Route: ```/show/:id```
 
 ---
 
-The show/:id page list the currently selected show. Showcasing the image, tile and genre.
+The show/:id page list the currently selected show. Showcasing the image, title, genre and comments.
 
-![alt text](https://github.com/nadavgreen/unit-6-final/blob/master/assests/show.png "Show")
+![alt text](https://github.com/nadavgreen/unit-6-final/blob/master/assests/show.png "show")
+
+In this example there is a new comment
+
+![alt text](https://github.com/nadavgreen/unit-6-final/blob/master/assests/showAfter.png "showAfter")
 
 #### 
 
@@ -68,11 +76,11 @@ Route: ```/shows```
 
 The /shows page list all of the tv shows in the database and the users that are watching them directly **below**
 
-![alt text](https://github.com/nadavgreen/unit-6-final/blob/master/assests/tvShows.png "tvShows")
+![alt text](https://github.com/nadavgreen/unit-6-final/blob/master/assests/shows.png "shows")
 
 In this example, after a **post**, [Pam Beesley](https://www.youtube.com/watch?v=gO8N3L_aERg) has created the [Lion King](https://www.youtube.com/watch?v=4CbLXeGSDxg) show as can be seen **below**.
 
-![alt text](https://github.com/nadavgreen/unit-6-final/blob/master/assests/editedTvShows.png "editedTvShows")
+![alt text](https://github.com/nadavgreen/unit-6-final/blob/master/assests/showsAfter.png "showsAfter")
 
 ### /backend: Express
 
