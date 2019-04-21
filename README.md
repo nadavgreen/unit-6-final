@@ -76,7 +76,7 @@ In this example, after a **post**, [Pam Beesley](https://www.youtube.com/watch?v
 
 ### /backend: Express
 
-##### The practice server was not implemented with CI/CD, unit testing, nor validation
+##### The practice server was not implemented with CI/CD, unit testing nor validation
 
 ###### Endpoints return '{"msg":"passed"}', '{"msg":"failed"}' or '{"msg":data}' where applicable
 
@@ -167,7 +167,7 @@ GET: ```/read/:id```
 
 ---
 
-The read/:id enpoint on the genres path allows you to get a specific genre based on id
+The read/:id endpoint on the genres path allows you to get a specific genre based on id
 
 ```id = YOUR DATA```
 
@@ -177,7 +177,7 @@ GET: ```/read```
 
 ---
 
-The read endpoint on the genres path allows you to get all genres. No data is required
+The read endpoint on the genres path allows you to get all genres in the db. No data is required
 
 ```curl http://localhost:3001/genres/read```
 
@@ -194,7 +194,7 @@ data = {
 }
 ```
 
-curl -X POST http://localhost:3001/genres/update -H "Content-Type: application/json" -d {"id":YOUR DATA, "genre_id":"YOUR DATA"} 
+```curl -X POST http://localhost:3001/genres/update -H "Content-Type: application/json" -d {"id":YOUR DATA, "genre_name":"YOUR DATA"}``` 
 
 DELETE: ```/delete```
 
@@ -210,9 +210,158 @@ data = {
 
 ```curl -X DELETE http://localhost:3001/genres/delete``` -H "Content-Type: application/json" -d '{"id":"YOU DATA"}'
 
-
 **Route: ```/shows```**
 
-The update endpoint on the users path allows you to put new information of an existing user. Because this is a **put** you will have to enter **all** information even if you aren't making changes to that column
+Post: ```/create```
+
+---
+
+The create endpoint on the shows path allows you to post a new show. Requiring title, img url, user id and genre id
+
+```
+data = { 
+	title: "YOUR DATA",
+	img_url: "YOUR DATA"
+	user_id: YOUR DATA,
+	genre_id: YOUR DATA, 
+}
+```
+
+```curl -X POST http://localhost:3001/shows/create -H "Content-Type: application/json" -d '{"title":"YOUR DATA", img_url:"YOUR DATA", "user_id":YOUR DATA, "genre_id":YOUR DATA}'```
+
+GET: ```/readgenres/:genre_id```
+
+---
+
+The readgenres/:genre_id endpoint on the shows path allows you to get a specific show based on genre id
+
+```id = YOUR DATA```
+
+```curl http://localhost:3001/shows/readgenres/YOUR DATA```
+
+GET: ```/read/:user_id```
+
+---
+
+The read/:user_id endpoint on the shows path allows you to get a specific show based on user id
+
+```id = YOUR DATA```
+
+```curl http://localhost:3001/shows/read/YOUR DATA```
+
+GET: ```/readone/:id```
+
+---
+
+The readone/:id endpoint on the shows path allows you to get a specific show based on id
+
+```id = YOUR DATA```
+
+```curl http://localhost:3001/shows/readone/YOUR DATA```
+
+GET: ```/read```
+
+---
+
+The read endpoint on the shows path allows you to get all shows in the db. No data is required
+
+```curl http://localhost:3001/shows/read```
+
+PUT: ```/update```
+
+---
+
+The update endpoint on the shows path allows you to put new information of an existing show. Because this is a **put** you will have to enter **all** information even if you aren't making changes to that column. The requirements are an existing id, a title, an img url, a user id and a genre id
+
+```
+data = {
+	id: YOUR DATA,
+	title: "YOUR DATA"
+	img_url: "YOUR DATA",
+	user_id: YOUR DATA,
+	genre_id: YOUR DATA
+}
+```
+
+```curl -X POST http://localhost:3001/shows/update -H "Content-Type: application/json" -d {"id":YOUR DATA, "title":"YOUR DATA", "img_url":"YOUR DATA", "user_id":YOUR DATA, "genre_id":YOUR DATA}``` 
+
+DELETE: ```/delete```
+
+---
+
+The delete endpoint on the shows path allows you to delete the information of a specific show based on id
+
+```
+data = { 
+	id : YOUR DATA 
+}
+```
+
+```curl -X DELETE http://localhost:3001/shows/delete``` -H "Content-Type: application/json" -d '{"id":"YOU DATA"}'
 
 **Route: ```/comments```**
+
+Post: ```/create```
+
+---
+
+The create endpoint on the comments path allows you to post a new comment. Requiring comment body, user id and show id
+
+```
+data = { 
+	comment_body: "YOUR DATA",
+	user_id: YOUR DATA,
+	show_id: YOUR DATA, 
+}
+```
+
+```curl -X POST http://localhost:3001/comments/create -H "Content-Type: application/json" -d '{"comment_body":"YOUR DATA", "user_id":YOUR DATA, "show_id":YOUR DATA}'```
+
+GET: ```/read/:id```
+
+---
+
+The read/:id endpoint on the comments path allows you to get a specific comment based on id
+
+```id = YOUR DATA```
+
+```curl http://localhost:3001/comments/read/YOUR DATA```
+
+GET: ```/read```
+
+---
+
+The read endpoint on the comments path allows you to get all comment in the db. No data is required
+
+```curl http://localhost:3001/comments/read```
+
+PUT: ```/update```
+
+---
+
+The update endpoint on the comments path allows you to put new information of an existing comment. Because this is a **put** you will have to enter **all** information even if you aren't making changes to that column. The requirements are an existing id, a comment body, a user id and a show id
+
+```
+data = {
+	id: YOUR DATA,
+	comment_body: "YOUR DATA",
+	user_id: YOUR DATA,
+	show_id: YOUR DATA
+}
+```
+
+```curl -X POST http://localhost:3001/comments/update -H "Content-Type: application/json" -d {"id":YOUR DATA, "comment_body":"YOUR DATA", "user_id":YOUR DATA, "show_id":YOUR DATA}``` 
+
+DELETE: ```/delete```
+
+---
+
+The delete endpoint on the comments path allows you to delete the information of a specific comment based on id
+
+```
+data = { 
+	id : YOUR DATA 
+}
+```
+
+```curl -X DELETE http://localhost:3001/comments/delete``` -H "Content-Type: application/json" -d '{"id":"YOU DATA"}'
