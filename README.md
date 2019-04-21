@@ -235,7 +235,7 @@ GET: ```/readgenres/:genre_id```
 
 The readgenres/:genre_id endpoint on the shows path allows you to get a specific show based on genre id
 
-```id = YOUR DATA```
+```genre_id = YOUR DATA```
 
 ```curl http://localhost:3001/shows/readgenres/YOUR DATA```
 
@@ -245,7 +245,7 @@ GET: ```/read/:user_id```
 
 The read/:user_id endpoint on the shows path allows you to get a specific show based on user id
 
-```id = YOUR DATA```
+```user_id = YOUR DATA```
 
 ```curl http://localhost:3001/shows/read/YOUR DATA```
 
@@ -326,6 +326,16 @@ The read/:id endpoint on the comments path allows you to get a specific comment 
 ```id = YOUR DATA```
 
 ```curl http://localhost:3001/comments/read/YOUR DATA```
+
+GET: ```/readshow/:show_id```
+
+---
+
+The readshow/:show_id endpoint on the comments path allows you to get a specific comment based on show id
+
+```show_id = YOUR DATA```
+
+```curl http://localhost:3001/comments/readshow/YOUR DATA```
 
 GET: ```/read```
 

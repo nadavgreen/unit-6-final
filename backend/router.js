@@ -39,6 +39,7 @@ routers.comments = () => {
 	const router = express.Router()
 	router.post('/create', commentsRoutes.create)
 	router.get('/read/:id', commentsRoutes.read)
+	router.get('/readshow/:show_id', commentsRoutes.read)
 	router.get('/read', commentsRoutes.readAll)
 	router.put('/update', commentsRoutes.update)
 	router.delete('/delete', commentsRoutes.delete)

@@ -57,19 +57,19 @@ export default class Shows extends Component {
 								{e.title}
 							</div>
 							<div>
-								{
+								Who's watching? {
 								e.users.length > 0 ?
 								e.users.map((e, i)=>{
 									return(
-										<div key={i}>
+										<span key={i}>
 										<Link to={`/user/${i+1}`}>
 											{this.state.users.length > 0 ?
-											this.state.users[e-1].username
+											this.state.users[e-1].username+" "
 											:
 											<></>
 											}
 										</Link>
-										</div>
+										</span>
 									)
 								})
 								:

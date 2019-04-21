@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
-import UserContext from '../context/user'
+import UserContext, {ActUserContext} from '../context/user'
 import APICalls from '../services/apicalls.js'
 
 export default class User extends Component {
@@ -32,6 +32,27 @@ export default class User extends Component {
 
 	render(){
 		return <>
+			<ActUserContext.Consumer>
+			{ user => {
+				if(user){
+					return <>
+						<div>
+							Welcome to, {user.username}!
+						</div>
+						<div>
+							Your user id is: {user.id}
+						</div>
+					</>
+				}
+				else {
+					return <>
+					</>
+				}
+			}}
+			</ActUserContext.Consumer>
+			<div>
+				Master List of All Users:
+			</div>
 			{
 			this.state.users.map((e, i)=>{
 				return (
