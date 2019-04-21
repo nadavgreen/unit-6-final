@@ -92,7 +92,7 @@ The create endpoint on the users path allows you to post a new user. The only re
 
 ```
 data = { 
-  username: "YOUR DATA" 
+	username: "YOUR DATA" 
 }
 ```
 
@@ -106,7 +106,7 @@ The read/:id endpoint on the users path allows you to get a specific user based 
 
 ```id = YOUR DATA```
 
-```curl http://localhost:3001/users/read/:YOUR DATA```
+```curl http://localhost:3001/users/read/YOUR DATA```
 
 GET: ```/read```
 
@@ -122,11 +122,12 @@ PUT: ```/update```
 
 ---
 
-The update endpoint on the users path allows you to put new information of an existing user. The only required data is a username
+The update endpoint on the users path allows you to put new information of an existing user. The requirements are an existing id and a new username
 
 ```
-data = { 
-  username: "YOUR DATA" 
+data = {
+	id: YOUR DATA,
+	username: "YOUR DATA" 
 }
 ```
 
@@ -140,7 +141,7 @@ The delete endpoint on the users path allows you to delete the information of a 
 
 ```
 data = { 
-  id : YOUR DATA 
+	id : YOUR DATA 
 }
 ```
 
@@ -148,8 +149,69 @@ data = {
 
 **Route: ```/genres```**
 
-**Route: ```/shows```**
+Post: ```/create```
 
+---
+
+The create endpoint on the genres path allows you to post a new genre. The only required data is a genre name
+
+```
+data = { 
+	genre_name: "YOUR DATA" 
+}
+```
+
+```curl -X POST http://localhost:3001/genres/create -H "Content-Type: application/json" -d '{"genre_name":"YOUR DATA"}'```
+
+GET: ```/read/:id```
+
+---
+
+The read/:id enpoint on the genres path allows you to get a specific genre based on id
+
+```id = YOUR DATA```
+
+```curl http://localhost:3001/genres/read/YOUR DATA```
+
+GET: ```/read```
+
+---
+
+The read endpoint on the genres path allows you to get all genres. No data is required
+
+```curl http://localhost:3001/genres/read```
+
+PUT: ```/update```
+
+---
+
+The update endpoint on the genres path allows you to put new information of an existing genre. The requirements are an existing id and a new genre name
+
+```
+data = {
+	id: YOUR DATA,
+	genre_name: "YOUR DATA"
+}
+```
+
+curl -X POST http://localhost:3001/genres/update -H "Content-Type: application/json" -d {"id":YOUR DATA, "genre_id":"YOUR DATA"} 
+
+DELETE: ```/delete```
+
+---
+
+The delete endpoint on the genres path allows you to delete the information of a specific genre based on id
+
+```
+data = { 
+	id : YOUR DATA 
+}
+```
+
+```curl -X DELETE http://localhost:3001/genres/delete``` -H "Content-Type: application/json" -d '{"id":"YOU DATA"}'
+
+
+**Route: ```/shows```**
 
 The update endpoint on the users path allows you to put new information of an existing user. Because this is a **put** you will have to enter **all** information even if you aren't making changes to that column
 
