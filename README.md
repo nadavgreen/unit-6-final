@@ -382,4 +382,4 @@ data = {
 }
 ```
 
-```curl -X DELETE http://localhost:3001/comments/delete -H "Content-Type: application/json" -d '{"id":"YOUR DATA"}'```
+```curl -X DELETE http://localhost:3001/comments/delete -H "Content-Type: application/json" -d '{"id":"YOUR DATA"}'``` 
